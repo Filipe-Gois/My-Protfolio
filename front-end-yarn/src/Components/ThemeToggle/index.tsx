@@ -1,9 +1,7 @@
-import { ComponentProps, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./style.css";
 
-type InputProps = ComponentProps<"input"> & {};
-
-const ThemeToggle = ({ ...props }: InputProps) => {
+const ThemeToggle = () => {
   const [theme, setTheme] = useState<string>(() => {
     // Verifica se o tema já está armazenado no localStorage
     const savedTheme = localStorage.getItem("theme");
@@ -29,9 +27,9 @@ const ThemeToggle = ({ ...props }: InputProps) => {
     }
   }, [theme]);
 
-  const toggleTheme = () => {
+  const toggleTheme = () =>
     setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
-  };
+
   return (
     // <button
     //   {...props}
@@ -43,7 +41,7 @@ const ThemeToggle = ({ ...props }: InputProps) => {
 
     <label
       htmlFor="themeToggle"
-      className="themeToggle st-sunMoonThemeToggleBtn"
+      className="themeToggle st-sunMoonThemeToggleBtn mr-2 text-darkScheme-primary dark:text-lightScheme-primary md:mr-0 md:my-[30%]"
     >
       <input
         onChange={toggleTheme}

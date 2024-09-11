@@ -5,7 +5,7 @@ const HomePage = () => {
     <main className="flex w-screen h-full flex-col">
       <Header />
 
-      <section></section>
+      <section className="w-full h-[1200px] bg-lightScheme-primary dark:bg-darkScheme-primary"></section>
     </main>
   );
 };
